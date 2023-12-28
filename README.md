@@ -1,4 +1,4 @@
 # psychic-train
 A prototype of an RPG using Unity
 
-Testing an init push - Promise
+Using unity Version 2022.3.16f1
