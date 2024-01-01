@@ -43,10 +43,11 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {
         _characterController.Move(currentMovement * (speed * Time.deltaTime));
+        
     }
 
     private void OnEnable()
-    {
+    { 
         _playerInput.CharacterControls.Enable();
     }
 
