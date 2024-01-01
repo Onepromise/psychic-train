@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b33d5c77-8346-4451-9c1c-143a1f658825" name="Changes" comment="" />
+    <list default="true" id="b33d5c77-8346-4451-9c1c-143a1f658825" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.psychic-train.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.psychic-train.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/psychic-train/Assets/Scenes/Playground.unity" beforeDir="false" afterPath="$PROJECT_DIR$/psychic-train/Assets/Scenes/Playground.unity" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +18,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../GithubRepo/Movement/Assets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/psychic-train/Assets/TutorialInfo/Scripts/Readme.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Project-Rune/ProjectRune/Assets/_Scripts/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/psychic-train/Assets/_Scripts/CharacterManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/psychic-train/Assets/_Scripts/Inputs/GameInput.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -30,9 +35,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Character-Movement",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -57,7 +64,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1703771100233</updated>
-      <workItem from="1703771102956" duration="2488000" />
+      <workItem from="1703771102956" duration="4703000" />
     </task>
     <servers />
   </component>
