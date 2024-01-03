@@ -1,10 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class BattleSystem : MonoBehaviour
+public class BattleManager : MonoBehaviour
 {
-    public static BattleSystem instance;
+    private static BattleManager instance;
+
+    public BattleState battleState;
+    
+    
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -16,17 +20,35 @@ public class BattleSystem : MonoBehaviour
             instance = this;
         }
     }
-    
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    
+
+    public void UpdateBattleState(BattleState newState)
     {
-        
+        battleState = newState;
+        switch (newState)
+        {
+            case BattleState.Start:
+                break;
+            case BattleState.PlayerTurn:
+                break;
+            case BattleState.EnemyTurn:
+                break;
+            case BattleState.Won:
+                break;
+            case BattleState.Lost:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
+        }
     }
+}
+
+public enum BattleState
+{
+    Start,
+    PlayerTurn,
+    EnemyTurn,
+    Won,
+    Lost
 }
