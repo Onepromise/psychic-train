@@ -1,33 +1,42 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public static SceneLoader instance;
+    private static SceneLoader _instance;
     
-    
+    public static SceneLoader GetInstance()
+    {
+        return _instance;
+    }
     private void Awake()
     {
-        if (instance != null && instance != this)
+        if (_instance != null && _instance != this)
         {
             Destroy(this);
         }
         else
         {
-            instance = this;
+            _instance = this;
         }
-        
         
     }
-    
-    
+
     private void Update()
     {
-        if (Input.GetKeyDown("space"))
+        ToOverworld();
+    }
+
+
+    public void ToOverworld()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("Playground");
+            SceneManager.LoadScene("Playground"); 
         }
+        
     }
 }
 

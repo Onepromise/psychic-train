@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5108138772929241165}
   - component: {fileID: 5354108047515114326}
   - component: {fileID: -897927506937226531}
+  - component: {fileID: -5921693588377748930}
   m_Layer: 0
   m_Name: GameManagers
   m_TagString: Untagged
@@ -45,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b4d0b9be151e8e45b1f856c926a0ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerUnit: []
+  enemyUnit: []
   gameState: 0
 --- !u!114 &-897927506937226531
 MonoBehaviour:
@@ -58,3 +61,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05741849f1f4bf54ba82322f2248d0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-5921693588377748930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8934525554940683879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54203ecceed50984d9ce617f548b97f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battleState: 0
+  enemyToLoad:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

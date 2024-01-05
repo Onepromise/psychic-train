@@ -7,11 +7,16 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager _gameManager;
     private static GameObject _instance;
+
+    //public UnitStats[] enemyToLoad;
     
     public static GameManager GetInstance()
     {
         return _gameManager;
     }
+    
+    public GameObject[] playerUnit;
+    public GameObject[] enemyUnit;
 
     public GameState gameState;
 
@@ -36,9 +41,10 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case GameState.OverWorld:
+                Debug.Log("Back in the world!");
                 break;
             case GameState.Combat:
-                
+                Debug.Log("Ready to Fight");
                 break;
             case GameState.Menus:
                 break;
