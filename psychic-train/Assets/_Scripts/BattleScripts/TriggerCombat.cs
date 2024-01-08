@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,19 +10,27 @@ public class TriggerCombat : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         { 
+            GameManager gameManager = GameManager._instance;
+            gameManager.ChangeState(GameState.Combat);
+            
+            BattleManager.GetInstance().enemyToLoad[0] = enemyUnit;
+            
+            
+            
             //loads the new combat scene
             SceneToLoad();
-            GameManager.GetInstance().gameState = GameState.Combat;
-
-            BattleManager.GetInstance().enemyToLoad[0] = enemyUnit;
         }
         
         
     }
-
     private void SceneToLoad()
     {
         SceneManager.LoadScene(sceneLoaderConfig.sceneToLoad);
+    }
+
+    private void SceneToLoadBack()
+    {
+        SceneManager.LoadScene(sceneLoaderConfig.sceneFrom);
     }
     
 }

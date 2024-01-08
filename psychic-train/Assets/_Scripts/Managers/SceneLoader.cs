@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
     private static SceneLoader _instance;
+
+    public string nextScene;
     
     public static SceneLoader GetInstance()
     {
@@ -23,20 +23,33 @@ public class SceneLoader : MonoBehaviour
         }
         
     }
-
-    private void Update()
-    {
-        ToOverworld();
-    }
-
-
+    
     public void ToOverworld()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("Playground"); 
+            GameManager gameManager = GameManager._instance;
+            gameManager.ChangeState(GameState.OverWorld);
+
+            SceneManager.LoadScene("Playground");
+
+            
         }
         
     }
+
+    public void NewGame()
+    {
+        SceneManager.LoadScene("Playground");
+        GameManager gameManager = GameManager._instance;
+        gameManager.ChangeState(GameState.OverWorld);
+    }
+
+    public void SceneToLoadAfterCombat()
+    {
+        BattleManager.GetInstance().enemyToLoad[0].sceneLocation = nextScene;
+        SceneManager.LoadScene(nextScene);
+    }
+    
 }
 

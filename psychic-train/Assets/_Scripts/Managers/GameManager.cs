@@ -1,63 +1,66 @@
 using System;
-using System.Diagnostics;
 using UnityEngine;
-using Debug = UnityEngine.Debug;
 
+public enum GameState { OverWorld, Combat, Menus, Loading, MainMenu }
 public class GameManager : MonoBehaviour
 {
-    private static GameManager _gameManager;
-    private static GameObject _instance;
-
-    //public UnitStats[] enemyToLoad;
+    public static GameManager _instance;
+    public GameState CurrentState { get; private set; }
     
-    public static GameManager GetInstance()
-    {
-        return _gameManager;
-    }
+    //Do I need this?
+    BattleManager _battleManager = BattleManager.GetInstance();
     
-    public GameObject[] playerUnit;
-    public GameObject[] enemyUnit;
+    public UnitStats[] PlayerUnits;
 
-    public GameState gameState;
-
+    public Dialogue dialogue;
+    
     private void Awake()
     {
-        _gameManager = this;
-        
-        DontDestroyOnLoad(gameObject);
         if (_instance == null)
         {
-            _instance = gameObject;
+            _instance = this;
+            DontDestroyOnLoad(gameObject); // Persist across scene changes
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // Prevent duplicates
         }
     }
-
-    public void UpdateGameState(GameState newState)
+    private void Start()
     {
-        gameState = newState;
+        CurrentState = GameState.MainMenu;
+        
+    }
+    
+    public void ChangeState(GameState newState)
+    {
+        CurrentState = newState;
+        Debug.Log("GameState changed to: " + newState);
+
+        
         switch (newState)
         {
             case GameState.OverWorld:
-                Debug.Log("Back in the world!");
+                
                 break;
             case GameState.Combat:
-                Debug.Log("Ready to Fight");
+                
                 break;
             case GameState.Menus:
+                //change input controlls
                 break;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
+            case GameState.Loading:
+                // Main scene for loading data
+                break;
+            case GameState.MainMenu:
+                //Similar to LoadingScene, but better looking.
+                break;
         }
     }
-    
+
+
+ 
+
 }
 
-public enum GameState
-{
-    OverWorld,
-    Combat,
-    Menus
-}
+

@@ -15,8 +15,10 @@ MonoBehaviour:
   unitName: Angry Pirate
   unitModel: {fileID: 955752728280100607, guid: 21ea88c4d6ff48848acf8879861564fb,
     type: 3}
-  unitLevel: 1
-  damage: 4
-  maxHP: 25
-  currentHP: 25
+  unitLevel: 2
+  damage: 5
+  maxHP: 20
+  currentHP: 20
   unitImage: {fileID: 0}
+  sceneLocation: MainMenu
+  battleScene: BattleScene2

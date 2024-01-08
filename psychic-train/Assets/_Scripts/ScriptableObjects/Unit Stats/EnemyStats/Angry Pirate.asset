@@ -20,3 +20,5 @@ MonoBehaviour:
   maxHP: 25
   currentHP: 25
   unitImage: {fileID: 0}
+  sceneLocation: Playground
+  battleScene: CombatScene

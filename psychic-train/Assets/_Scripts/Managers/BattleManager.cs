@@ -12,8 +12,20 @@ public class BattleManager : MonoBehaviour
     
     public BattleState battleState;
     
+    //Enemies that get loaded from SceneLoader
     public UnitStats[] enemyToLoad;
+
+    public GameObject playerModel;
+    public GameObject enemyModel;
+
+    private Vector3 playerBattleStation = new Vector3(-3, 1, 0);
+    private Vector3 enemyBattleStation = new Vector3(3, 1, 0);
+
+    public int playerhealth, playerDMG, enemyHealth, enemyDMG;
     
+    public BattleSceneLoaderConfig sceneToLoadBack;
+
+    public Dialogue combatDialogue;
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -28,23 +40,38 @@ public class BattleManager : MonoBehaviour
 
     private void Start()
     {
-        battleState = BattleState.Start;
-        StartCoroutine(SetupBattle());
+        battleState = BattleState.NoBattle;
     }
 
-    // private void Update()
-    // {
-    //     if (Input.GetKeyDown("space"))
-    //     {
-    //         //Change the BattleState to Won
-    //         battleState = BattleState.Won;
-    //
-    //     }
-    // }
+    private void Update()
+    {
+        if (battleState == BattleState.Start)
+        {
+            StartCoroutine(SetupBattle());
+        }
+    }
+    
 
     IEnumerator SetupBattle()
     {
-        Debug.Log("Setup Battle has started!");
+        playerModel = GameManager._instance.PlayerUnits[0].unitModel;
+        enemyModel = enemyToLoad[0].unitModel;
+
+        playerModel.transform.position = playerBattleStation;
+        enemyModel.transform.position = enemyBattleStation;
+        
+        Instantiate(playerModel);
+        Instantiate(enemyModel);
+
+        playerhealth = GameManager._instance.PlayerUnits[0].currentHP;
+        playerDMG = GameManager._instance.PlayerUnits[0].damage;
+
+        enemyHealth = enemyToLoad[0].currentHP;
+        enemyDMG = enemyToLoad[0].damage;
+        
+
+        combatDialogue.dialogueBox = "Battle has started!";
+        
         yield return new WaitForSeconds(2f);
         PlayerTurn();
     }
@@ -52,53 +79,48 @@ public class BattleManager : MonoBehaviour
     private void PlayerTurn()
     {
         battleState = BattleState.PlayerTurn;
-        
-        Debug.Log("You must make a move!");
-        if (Input.GetKeyDown("space"))
-        {
-            //Change the BattleState to Won
-            battleState = BattleState.Won;
-            EndBattle();
-        }
+        combatDialogue.dialogueBox ="You must make a move!";
     }
+
+    public void OnAttackButton()
+    {
+        Debug.Log("You have pressed the attack!");
+        
+        // if (battleState != BattleState.PlayerTurn)
+        //     return;
+        // StartCoroutine(PlayerAttack());
+        
+    }
+
+    IEnumerator PlayerAttack()
+    {
+        //Damage the enemy
+        enemyHealth-= playerDMG;
+
+        combatDialogue.dialogueBox = "You did " + playerDMG + " Damage.";
+        
+        yield return new WaitForSeconds(2f);
+    }
+
 
     private void EndBattle()
     {
         if (battleState == BattleState.Won)
         {
             Debug.Log("You Won the battle");
-        }else if (battleState == BattleState.Lost)
+        }
+        else if (battleState == BattleState.Lost)
         {
             Debug.Log("You Lost the battle");
         }
     }
 
-    // public void UpdateBattleState(BattleState newState)
-    // {
-    //     battleState = newState;
-    //     switch (newState)
-    //     {
-    //         case BattleState.Start:
-    //             Debug.Log("The Battle has started!");
-    //             break;
-    //         case BattleState.PlayerTurn:
-    //             break;
-    //         case BattleState.EnemyTurn:
-    //             break;
-    //         case BattleState.Won:
-    //             Debug.Log("We have won the battle!");
-    //             GameManager.GetInstance().gameState = GameState.OverWorld;
-    //             SceneLoader.GetInstance().ToOverworld();
-    //             break;
-    //         case BattleState.Lost:
-    //             break;
-    //         case BattleState.NoBattle:
-    //             break;
-    //         default:
-    //             throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
-    //     }
-    // }
+   
+    
+    
 }
+
+   
 
 public enum BattleState
 {

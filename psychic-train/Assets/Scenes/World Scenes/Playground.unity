@@ -329,7 +329,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 642524117}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.21338078, y: 0.069702946, z: -0.015264651, w: 0.97435987}
+  m_LocalRotation: {x: 0.21338083, y: 0.06970295, z: -0.015264645, w: 0.97435987}
   m_LocalPosition: {x: -3.88, y: 13.54, z: -26.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -634,7 +634,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961739749}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.21338078, y: 0.069702946, z: -0.015264651, w: 0.97435987}
+  m_LocalRotation: {x: 0.21338083, y: 0.06970295, z: -0.015264645, w: 0.97435987}
   m_LocalPosition: {x: -3.880002, y: 13.54, z: -26.980005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -871,6 +871,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6574680624216533616, guid: 1ffd503e6c73d13419036c1ef1c0501f,
+        type: 3}
+      propertyPath: combatDialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: dfadd53e617b05449a40fd274941572a,
+        type: 2}
     - target: {fileID: 5108138772929241165, guid: 1ffd503e6c73d13419036c1ef1c0501f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -921,22 +927,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5354108047515114326, guid: 1ffd503e6c73d13419036c1ef1c0501f,
-        type: 3}
-      propertyPath: playerUnit.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5354108047515114326, guid: 1ffd503e6c73d13419036c1ef1c0501f,
-        type: 3}
-      propertyPath: enemyToLoad.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5354108047515114326, guid: 1ffd503e6c73d13419036c1ef1c0501f,
-        type: 3}
-      propertyPath: playerUnit.Array.data[0]
-      value: 
-      objectReference: {fileID: 2109347676859112368, guid: b210ab05dc6a5dd429965c3384c6d895,
-        type: 3}
     - target: {fileID: 8934525554940683879, guid: 1ffd503e6c73d13419036c1ef1c0501f,
         type: 3}
       propertyPath: m_Name
@@ -1156,6 +1146,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4875586303857074719, guid: 47c7755b66744224a9ed2836a963ab6f,
+        type: 3}
+      propertyPath: enemyUnit
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f4f4007724588b44af47b934581f5d9,
+        type: 2}
     - target: {fileID: 5618694059226002588, guid: 47c7755b66744224a9ed2836a963ab6f,
         type: 3}
       propertyPath: m_Name
