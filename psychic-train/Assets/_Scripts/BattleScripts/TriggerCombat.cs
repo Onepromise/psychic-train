@@ -9,14 +9,8 @@ public class TriggerCombat : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        { 
-            GameManager gameManager = GameManager._instance;
-            gameManager.ChangeState(GameState.Combat);
-            
-            BattleManager.GetInstance().enemyToLoad[0] = enemyUnit;
-            
-            
-            
+        {
+            GameManager._instance.enemyToLoad[0] = enemyUnit;
             //loads the new combat scene
             SceneToLoad();
         }

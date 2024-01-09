@@ -20,10 +20,6 @@ public class PlayerBattleHUD : MonoBehaviour
 
     private void Start()
     {
-
-        BattleManager battleManager = BattleManager.GetInstance();
-        battleManager.battleState = BattleState.Start;
-        
         SetHud();
     }
 
@@ -34,10 +30,10 @@ public class PlayerBattleHUD : MonoBehaviour
     
     public void SetHud()
     {
-        nameText.text = _gameManager.PlayerUnits[0].unitName;
-        levelText.text = "Lvl " + _gameManager.PlayerUnits[0].unitLevel;
-        hpSlider.maxValue = _gameManager.PlayerUnits[0].maxHP;
-        hpSlider.value = _gameManager.PlayerUnits[0].currentHP;
+        nameText.text = _gameManager.playerUnits[0].unitName;
+        levelText.text = "Lvl " + _gameManager.playerUnits[0].unitLevel;
+        hpSlider.maxValue = _gameManager.playerUnits[0].maxHP;
+        hpSlider.value = _gameManager.playerUnits[0].currentHP;
     }
     
     public void SetHP(int hp)

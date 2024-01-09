@@ -30,12 +30,8 @@ public class SceneLoader : MonoBehaviour
         {
             GameManager gameManager = GameManager._instance;
             gameManager.ChangeState(GameState.OverWorld);
-
             SceneManager.LoadScene("Playground");
-
-            
         }
-        
     }
 
     public void NewGame()
@@ -45,11 +41,7 @@ public class SceneLoader : MonoBehaviour
         gameManager.ChangeState(GameState.OverWorld);
     }
 
-    public void SceneToLoadAfterCombat()
-    {
-        BattleManager.GetInstance().enemyToLoad[0].sceneLocation = nextScene;
-        SceneManager.LoadScene(nextScene);
-    }
+   
     
 }
 

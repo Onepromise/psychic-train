@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5108138772929241165}
   - component: {fileID: 5354108047515114326}
   - component: {fileID: -897927506937226531}
-  - component: {fileID: -6574680624216533616}
   m_Layer: 0
   m_Name: GameManagers
   m_TagString: Untagged
@@ -46,11 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b4d0b9be151e8e45b1f856c926a0ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerUnits:
+  playerUnits:
   - {fileID: 11400000, guid: 764534bc1b060d849b4d07e9716a0a4f, type: 2}
   - {fileID: 0}
   - {fileID: 0}
-  dialogue: {fileID: 0}
+  enemyToLoad:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &-897927506937226531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,28 +66,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: 
---- !u!114 &-6574680624216533616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8934525554940683879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54203ecceed50984d9ce617f548b97f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  battleState: 0
-  enemyToLoad:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  playerModel: {fileID: 0}
-  enemyModel: {fileID: 0}
-  playerhealth: 0
-  playerDMG: 0
-  enemyHealth: 0
-  enemyDMG: 0
-  sceneToLoadBack: {fileID: 0}
-  combatDialogue: {fileID: 11400000, guid: dfadd53e617b05449a40fd274941572a, type: 2}

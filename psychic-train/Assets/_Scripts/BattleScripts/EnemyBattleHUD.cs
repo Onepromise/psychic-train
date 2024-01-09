@@ -9,7 +9,7 @@ public class EnemyBattleHUD : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI levelText;
     public Slider hpSlider;
-    BattleManager battleManager = BattleManager.GetInstance();
+    //BattleManager battleManager = BattleManager.GetInstance();
     
 
     private void Start()
@@ -21,10 +21,10 @@ public class EnemyBattleHUD : MonoBehaviour
     
     public void SetHud()
     {
-        nameText.text = battleManager.enemyToLoad[0].unitName;
-        levelText.text = "Lvl " +battleManager.enemyToLoad[0].unitLevel;
-        hpSlider.maxValue = battleManager.enemyToLoad[0].maxHP;
-        hpSlider.value = battleManager.enemyToLoad[0].currentHP;
+        // nameText.text = battleManager.enemyToLoad[0].unitName;
+        // levelText.text = "Lvl " +battleManager.enemyToLoad[0].unitLevel;
+        // hpSlider.maxValue = battleManager.enemyToLoad[0].maxHP;
+        // hpSlider.value = battleManager.enemyToLoad[0].currentHP;
     }
     
     

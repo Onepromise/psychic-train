@@ -7,12 +7,9 @@ public class GameManager : MonoBehaviour
     public static GameManager _instance;
     public GameState CurrentState { get; private set; }
     
-    //Do I need this?
-    BattleManager _battleManager = BattleManager.GetInstance();
-    
-    public UnitStats[] PlayerUnits;
-
-    public Dialogue dialogue;
+    //combat references
+    public UnitStats[] playerUnits;
+    public UnitStats[] enemyToLoad;
     
     private void Awake()
     {
@@ -57,6 +54,9 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+    
+    //Things to Load into CombatManager
+    
 
 
  
