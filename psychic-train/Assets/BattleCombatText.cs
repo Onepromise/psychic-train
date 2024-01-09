@@ -9,8 +9,8 @@ public class BattleCombatText : MonoBehaviour
 
     public TextMeshProUGUI dialogueText;
     
-    void Update()
+    /*void Update()
     {
         dialogueText.text = text.dialogueBox;
-    }
+    }*/
 }

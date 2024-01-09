@@ -19,7 +19,7 @@ public class UnitStats : ScriptableObject
 
     public string sceneLocation;
     public string battleScene;
-
+    
 }
 
 

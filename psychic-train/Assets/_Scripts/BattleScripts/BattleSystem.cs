@@ -122,7 +122,7 @@ public class BattleSystem : MonoBehaviour
         
         enemyHUD.SetHP(enemyUnit.stats.currentHP);
        
-        dialogueText.text = "The attack is successful!";
+        dialogueText.text = playerUnit.stats.unitName +" did " + playerUnit.stats.damage + " damage to " + enemyUnit.stats.unitName ;
         
         
         yield return new WaitForSeconds(2f);
@@ -153,6 +153,7 @@ public class BattleSystem : MonoBehaviour
         bool isDead = playerUnit.TakeDamage(enemyUnit.stats.damage);
         
         playerHUD.SetHP(playerUnit.stats.currentHP);
+        dialogueText.text = enemyUnit.stats.unitName +" did " + enemyUnit.stats.damage + " damage to " + playerUnit.stats.unitName ;
 
         yield return new WaitForSeconds(1f);
 
@@ -173,6 +174,9 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             dialogueText.text = "You won the battle!";
+            enemyUnit.BackToScene();
+            enemyUnit.stats.currentHP = enemyUnit.stats.maxHP;
+
         }else if (state == BattleState.LOST)
         {
             dialogueText.text = "You were defeated.";

@@ -24,14 +24,9 @@ public class SceneLoader : MonoBehaviour
         
     }
     
-    public void ToOverworld()
+    public void ToScene(string scene)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GameManager gameManager = GameManager._instance;
-            gameManager.ChangeState(GameState.OverWorld);
-            SceneManager.LoadScene("Playground");
-        }
+        SceneManager.LoadScene("Playground");
     }
 
     public void NewGame()

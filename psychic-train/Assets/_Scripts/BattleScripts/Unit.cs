@@ -43,6 +43,12 @@ public class Unit : MonoBehaviour
             stats.currentHP = stats.maxHP;
         }
     }
+
+    public void BackToScene()
+    {
+        SceneLoader sceneLoader = SceneLoader.GetInstance();
+        sceneLoader.ToScene(stats.sceneLocation);
+    }
     
 
 }
