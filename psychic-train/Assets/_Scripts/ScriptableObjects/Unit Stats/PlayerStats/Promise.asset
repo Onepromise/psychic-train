@@ -16,7 +16,9 @@ MonoBehaviour:
   unitModel: {fileID: 2109347676859112368, guid: b210ab05dc6a5dd429965c3384c6d895,
     type: 3}
   unitLevel: 10
-  damage: 7
+  damage: 9
   maxHP: 30
-  currentHP: 27
+  currentHP: 30
   unitImage: {fileID: 0}
+  sceneLocation: 
+  battleScene: 
