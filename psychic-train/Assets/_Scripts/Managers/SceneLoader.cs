@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,15 +24,20 @@ public class SceneLoader : MonoBehaviour
         }
         
     }
-    
+
+    private void Update()
+    {
+        Debug.Log(nextScene);
+    }
+
     public void ToScene(string scene)
     {
-        SceneManager.LoadScene("Playground");
+        SceneManager.LoadScene(scene);
     }
 
     public void NewGame()
     {
-        SceneManager.LoadScene("Playground");
+        ToScene("Village Scene");
         GameManager gameManager = GameManager._instance;
         gameManager.ChangeState(GameState.OverWorld);
     }
