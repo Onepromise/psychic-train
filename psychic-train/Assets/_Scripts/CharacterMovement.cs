@@ -9,6 +9,9 @@ public class CharacterMovement : MonoBehaviour
     //declare reference variables
     private PlayerInput _playerInput;
     private CharacterController _characterController;
+    
+    //Animation components
+    private Animator _animator;
 
     // variables to store player input values
     private Vector2 currentMovementInput;
@@ -27,7 +30,9 @@ public class CharacterMovement : MonoBehaviour
         _playerInput.CharacterControls.Move.started += onMovementInput;
         _playerInput.CharacterControls.Move.canceled += onMovementInput;
         _playerInput.CharacterControls.Move.performed += onMovementInput;
-        
+
+        _animator = GetComponent<Animator>();
+
     }
 
     void onMovementInput(InputAction.CallbackContext context)
@@ -37,6 +42,16 @@ public class CharacterMovement : MonoBehaviour
         currentMovement.z = currentMovementInput.y;
 
         isMovementPressed = currentMovementInput.x != 0 || currentMovementInput.y != 0;
+
+        if (isMovementPressed)
+        {
+            _animator.SetBool("isWalking", true);
+        }
+
+        if (!isMovementPressed)
+        {
+            _animator.SetBool("isWalking", false);
+        }
     }
 
     // Update is called once per frame
@@ -55,4 +70,7 @@ public class CharacterMovement : MonoBehaviour
     {
         _playerInput.CharacterControls.Disable();
     }
+    
+    
+    
 }
