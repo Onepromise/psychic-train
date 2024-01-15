@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Angry Pirate
   m_EditorClassIdentifier: 
   unitName: Angry Pirate
-  unitModel: {fileID: 955752728280100607, guid: 21ea88c4d6ff48848acf8879861564fb,
+  unitModel: {fileID: 3486555764524093958, guid: 5db95410bf3864d8dbace2c853a2511d,
     type: 3}
   unitLevel: 7
-  damage: 6
+  damage: 2
   maxHP: 25
   currentHP: 25
   unitImage: {fileID: 0}
-  sceneLocation: Playground
+  sceneLocation: Village Scene
   battleScene: CombatScene
+  animatorController: {fileID: 9100000, guid: 887c36e82800e4375b3213cfc0cb6506, type: 2}

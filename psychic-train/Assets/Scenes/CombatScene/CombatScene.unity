@@ -1580,10 +1580,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  playerPrefab: {fileID: 2109347676859112368, guid: b210ab05dc6a5dd429965c3384c6d895,
-    type: 3}
-  enemyPrefab: {fileID: 955752728280100607, guid: 21ea88c4d6ff48848acf8879861564fb,
-    type: 3}
+  playerPrefab: {fileID: 0}
+  enemyPrefab: {fileID: 0}
   dialogueText: {fileID: 208854364}
   playerHUD: {fileID: 512452335}
   enemyHUD: {fileID: 7180202}
