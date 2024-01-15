@@ -25,11 +25,6 @@ public class SceneLoader : MonoBehaviour
         
     }
 
-    private void Update()
-    {
-        Debug.Log(nextScene);
-    }
-
     public void ToScene(string scene)
     {
         SceneManager.LoadScene(scene);
