@@ -17,10 +17,13 @@ public class CharacterMovement : MonoBehaviour
     private Vector2 currentMovementInput;
     private Vector3 currentMovement;
     private bool isMovementPressed;
-
-
+    
+    
+    [SerializeField] private float rotationSpeed = 360;
+    
     [SerializeField] private float speed;
 
+    
 
     private void Awake()
     {
@@ -46,6 +49,7 @@ public class CharacterMovement : MonoBehaviour
         if (isMovementPressed)
         {
             _animator.SetBool("isWalking", true);
+            //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(currentMovement), 0.15f);
         }
 
         if (!isMovementPressed)
@@ -53,11 +57,21 @@ public class CharacterMovement : MonoBehaviour
             _animator.SetBool("isWalking", false);
         }
     }
+    
+
 
     // Update is called once per frame
     void Update()
     {
         _characterController.Move(currentMovement * (speed * Time.deltaTime));
+        if (isMovementPressed)
+        {
+            // Calculate the desired rotation based on the movement direction
+            Quaternion targetRotation = Quaternion.LookRotation(currentMovement);
+
+            // Smoothly rotate towards the target rotation
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
         
     }
 

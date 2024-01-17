@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class Unit : MonoBehaviour
@@ -13,10 +9,12 @@ public class Unit : MonoBehaviour
     // public int damage;
     // public int maxHP;
     // public int currentHP;
-
+    private Animator _animator;
 
     private void Awake()
     {
+        
+        _animator = GetComponent<Animator>();
         // unitName = stats.unitName;
         // damage = stats.damage;
         // unitLevel = stats.unitLevel;

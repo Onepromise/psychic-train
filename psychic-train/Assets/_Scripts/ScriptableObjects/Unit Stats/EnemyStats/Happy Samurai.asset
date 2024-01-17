@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Happy Samurai
   m_EditorClassIdentifier: 
   unitName: Happy Samurai
-  unitModel: {fileID: 955752728280100607, guid: 21ea88c4d6ff48848acf8879861564fb,
+  unitModel: {fileID: 8261282436480235744, guid: 8be6615120b4f4e4b8cd012cfdc12f72,
     type: 3}
   unitLevel: 2
-  damage: 0
+  damage: 1
   maxHP: 20
   currentHP: 20
   unitImage: {fileID: 0}
-  sceneLocation: MainMenu
-  battleScene: BattleScene2
+  sceneLocation: Village Scene
+  battleScene: CombatScene
+  animatorController: {fileID: 9100000, guid: 887c36e82800e4375b3213cfc0cb6506, type: 2}

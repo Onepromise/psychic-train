@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Promise
   m_EditorClassIdentifier: 
   unitName: Promise
-  unitModel: {fileID: 2109347676859112368, guid: b210ab05dc6a5dd429965c3384c6d895,
+  unitModel: {fileID: 3245552355114847525, guid: 8d928d2f4c5904219a5f77bfbd5dbbce,
     type: 3}
   unitLevel: 10
   damage: 9
   maxHP: 30
-  currentHP: 30
+  currentHP: 12
   unitImage: {fileID: 0}
   sceneLocation: 
   battleScene: 
+  animatorController: {fileID: 9100000, guid: 887c36e82800e4375b3213cfc0cb6506, type: 2}

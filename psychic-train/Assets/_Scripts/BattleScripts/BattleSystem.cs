@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -10,15 +11,16 @@ public class BattleSystem : MonoBehaviour
 {
     public BattleState state;
     
+    private Animator _animator;
 
-    public GameObject playerPrefab;
-    public GameObject enemyPrefab;
+    public GameObject playerPrefab ;
+    public GameObject enemyPrefab ;
 
     //public Transform playerBattleStation;
     //public Transform enemyBattleStation;
 
-    private Unit playerUnit;
-    private Unit enemyUnit;
+    public Unit playerUnit;
+    public Unit enemyUnit;
 
     public TextMeshProUGUI dialogueText;
 
@@ -26,6 +28,12 @@ public class BattleSystem : MonoBehaviour
     public BattleHUD enemyHUD;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
+
     void Start()
     {
         ChangeState(BattleState.START);
@@ -60,11 +68,12 @@ public class BattleSystem : MonoBehaviour
     IEnumerator SetupBattle()
     {
         
+        
         Debug.Log("Setup time");
-        GameObject playerGO = Instantiate(playerPrefab);
+        GameObject playerGO = Instantiate(GameManager._instance.playerUnits[0].unitModel);
         playerUnit = playerGO.GetComponent<Unit>();
         
-        GameObject enemyGO = Instantiate(enemyPrefab);
+        GameObject enemyGO = Instantiate(GameManager._instance.enemyToLoad[0].unitModel);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
         dialogueText.text = "A wild " + enemyUnit.stats.unitName + " has appeared!";
@@ -87,6 +96,7 @@ public class BattleSystem : MonoBehaviour
 
     public void OnAttackButton()
     {
+        
         Debug.Log("attack selected");
         if (state == BattleState.PLAYERTURN)
         {
@@ -100,6 +110,7 @@ public class BattleSystem : MonoBehaviour
         if(state != BattleState.PLAYERTURN)
             return;
         StartCoroutine(PlayerHeal());
+        
     }
 
     IEnumerator PlayerHeal()
@@ -117,12 +128,20 @@ public class BattleSystem : MonoBehaviour
     IEnumerator PlayerAttack()
     {
         
+        playerUnit.GetComponent<Animator>().SetTrigger("BasicAttack");
+
+        yield return new WaitForSeconds(1f);
+        
         // Damage the enemy
         bool isDead = enemyUnit.TakeDamage(playerUnit.stats.damage);
+        
+        
         
         enemyHUD.SetHP(enemyUnit.stats.currentHP);
        
         dialogueText.text = playerUnit.stats.unitName +" did " + playerUnit.stats.damage + " damage to " + enemyUnit.stats.unitName ;
+        
+        playerUnit.GetComponent<Animator>().SetTrigger("Idle");
         
         
         yield return new WaitForSeconds(2f);
@@ -147,6 +166,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator EnemyTurn()
     {
         dialogueText.text = enemyUnit.stats.unitName + "attacks!";
+        enemyUnit.GetComponent<Animator>().SetTrigger("BasicAttack");
 
         yield return new WaitForSeconds(1f);
 
@@ -154,6 +174,8 @@ public class BattleSystem : MonoBehaviour
         
         playerHUD.SetHP(playerUnit.stats.currentHP);
         dialogueText.text = enemyUnit.stats.unitName +" did " + enemyUnit.stats.damage + " damage to " + playerUnit.stats.unitName ;
+        
+        enemyUnit.GetComponent<Animator>().SetTrigger("Idle");
 
         yield return new WaitForSeconds(1f);
 
