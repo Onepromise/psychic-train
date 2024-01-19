@@ -16,7 +16,7 @@ public class UnitStats : ScriptableObject
     public int maxHP;
     public int currentHP;
 
-    public Image unitImage;
+    public Sprite unitImage;
 
     public string sceneLocation;
     public string battleScene;

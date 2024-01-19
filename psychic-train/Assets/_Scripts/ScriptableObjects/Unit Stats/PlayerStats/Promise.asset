@@ -18,8 +18,8 @@ MonoBehaviour:
   unitLevel: 10
   damage: 9
   maxHP: 30
-  currentHP: 12
-  unitImage: {fileID: 0}
+  currentHP: 20
+  unitImage: {fileID: 21300000, guid: 2fb97a11912bf4841800e8862b08a32d, type: 3}
   sceneLocation: 
   battleScene: 
   animatorController: {fileID: 9100000, guid: 887c36e82800e4375b3213cfc0cb6506, type: 2}
