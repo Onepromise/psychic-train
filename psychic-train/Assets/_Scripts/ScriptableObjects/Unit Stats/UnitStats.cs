@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 [CreateAssetMenu(fileName = "Unit stats")]
 public class UnitStats : ScriptableObject
@@ -24,5 +22,3 @@ public class UnitStats : ScriptableObject
     public AnimatorController animatorController;
 
 }
-
-
