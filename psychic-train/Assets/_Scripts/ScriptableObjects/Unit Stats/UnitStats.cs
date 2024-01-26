@@ -10,6 +10,10 @@ public class UnitStats : ScriptableObject
 
     public int unitLevel;
     public int damage;
+    public int defence;
+    public int mDamage;
+    public int mDefence;
+    public int speed;
 
     public int maxHP;
     public int currentHP;
